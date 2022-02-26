@@ -20,8 +20,9 @@ router.post('/', (req, res)=>{
 });
 
 router.get('/:id', (req, res)=>{
-    const id = req.params;
-    res.send(req.params);
+    const { id }= req.params;
+    const founduser = users.find((user) => user.id == id);
+    res.send(founduser);
 });
 
 export default router;
